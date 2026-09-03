@@ -1,3 +1,0 @@
-# Add exact folder names here to skip them during planning.
-# Example:
-Trims
