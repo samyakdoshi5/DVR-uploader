@@ -1,4 +1,5 @@
 client_secret_302541253644-066qck85pvrqtbqelho2ivjvbo7gav2f.apps.googleusercontent.com.json
 state.json
 token.json
-/bak
+bak/
+__pycache__/
