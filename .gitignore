@@ -3,3 +3,4 @@ state.json
 token.json
 bak/
 __pycache__/
+ignored_folders.txt
