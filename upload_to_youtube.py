@@ -494,12 +494,12 @@ def ensure_playlist(youtube, playlists_cache: dict[str, str], title: str) -> str
             snippet = playlist.get("snippet", {})
             if snippet.get("title") == title:
                 status = playlist.get("status", {})
-                if status.get("privacyStatus") != "unlisted":
+                if status.get("privacyStatus") != "public":
                     youtube.playlists().update(
                         part="status",
                         body={
                             "id": playlist["id"],
-                            "status": {"privacyStatus": "unlisted"},
+                            "status": {"privacyStatus": "public"},
                         },
                     ).execute()
                 playlists_cache[title] = playlist["id"]
@@ -513,7 +513,7 @@ def ensure_playlist(youtube, playlists_cache: dict[str, str], title: str) -> str
                 "title": title,
                 "description": f"Auto-created playlist for {title}",
             },
-            "status": {"privacyStatus": "unlisted"},
+            "status": {"privacyStatus": "public"},
         },
     )
     created = execute_with_rate_limit_retry(created)
@@ -560,7 +560,7 @@ def upload_video(
                 "categoryId": "22",
             },
             "status": {
-                "privacyStatus": "unlisted",
+                "privacyStatus": "public",
             },
         },
         media_body=media,
