@@ -4,3 +4,4 @@ token.json
 bak/
 __pycache__/
 ignored_folders.txt
+.fpv_pipeline_tmp
